@@ -1,19 +1,19 @@
-\documentclass[aspectratio=169]{beamer}
+\documentclass[aspectratio=169,table]{beamer}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{import} % import sub files
 \usepackage{listings} % for code listings
-\usepackage[table]{xcolor} % for colored tables
-\usepackage[outputdir=out]{minted} % for code highlighting (warn: update the build directory when changing it in the makefile)
+\usepackage[outputdir=out]{minted} % for code highlighting
+\usepackage{xcolor} % for colored tables
 \usepackage{config/presentation}
 
 % references
-\usepackage[style=ieee, backend=biber, sorting=none, defernumbers=true]{biblatex}
-\addbibresource{refs.bib}
+% \usepackage[style=ieee, backend=biber, sorting=none, defernumbers=true]{biblatex}
+% \addbibresource{refs.bib}
 
 % base informations
-\title{NIST Presentation}
-\author[Author]{Author}
+\title{WIPP: Reminder, AI plugins and enhancements}
+\author[Author]{Antoine Meyer}
 \date[\today]{\today}
 
 \begin{document}
@@ -26,15 +26,18 @@
     \tableofcontents
   \end{frame}
 
-  \import{./sections/}{example}
+  \import{./sections/}{1_reminder}
+  \import{./sections/}{2_ai-plugins}
+  \import{./sections/}{3_enhancements}
+  \import{./sections/}{4_conclusion}
 
   \begin{frame}[plain]
     \centering
     \LARGE Thanks !
   \end{frame}
 
-  \begin{frame}[allowframebreaks, noframenumbering]{References}
-    \printbibliography
-  \end{frame}
+%  \begin{frame}[allowframebreaks, noframenumbering]{References}
+%    \printbibliography
+%  \end{frame}
 
 \end{document}
