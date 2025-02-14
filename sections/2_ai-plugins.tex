@@ -96,27 +96,29 @@
 
   Compute in few minutes on WIPP with dataset `3D-RPE W3`
 
-  The first column (gray) is ground truth and the first row (blue) is models prediction
+  The first column (gray) is ground truth and the first row (blue) is model prediction
 
   \begin{center}
     \begin{table}
-      \begin{tabular}{|c|c|c|c|}
+      \begin{tabular}{|c|c|c|c|c|}
        \hline
-       \rowcolor{tableFirstRowColor}                      & WIPP Unet             & CELLPOSE cyto3        & SAM2 .1-hiera-large   \\ [0.5ex]
+       \rowcolor{tableFirstRowColor}      & Wipp unet             & BioImage.IO*          & Cellpose cyto3        & Sam2**   \\ [0.5ex]
        \hline
-       \cellcolor{tableFirstColColor} 3D-RPE W3           & 83.97\% $\pm$ 14.95\% & 49.53\% $\pm$ 25.06\% & 30.18\% $\pm$ 27.09\% \\
+       \cellcolor{tableFirstColColor} W3  & 83.97\% $\pm$ 14.95\% & 00.00\% $\pm$ 0.00\%  & 49.53\% $\pm$ 25.06\% & 30.18\% $\pm$ 27.09\% \\
        \hline
-       \cellcolor{tableFirstColColor} WIPP Unet           & $\times$              & 51.75\% $\pm$ 25.33\% & \\
+       \cellcolor{tableFirstColColor} W   & $\times$              &                       & 51.75\% $\pm$ 25.33\% & \\
        \hline
-       \cellcolor{tableFirstColColor} CELLPOSE cyto3      & $\times$              & $\times$              & \\
+       \cellcolor{tableFirstColColor} B   & $\times$              & $\times$              &                       & \\
        \hline
-       \cellcolor{tableFirstColColor} SAM2 .1-hiera-large & $\times$              & $\times$              & $\times$              \\
+       \cellcolor{tableFirstColColor} C   & $\times$              & $\times$              & $\times$              & \\
        \hline
       \end{tabular}
-      \caption{Similarity across different models}
+      \caption{Similarity across different models and ground truth}
     \end{table}
   \end{center}
 
-  Feedback: AI models are now easy to use and fast results in WIPP
+  *NucleiSegmentationBoundaryModel
+
+  **sam2-hiera-large
 
 \end{frame}
