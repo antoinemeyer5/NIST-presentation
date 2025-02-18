@@ -1,0 +1,186 @@
+\def\sectiontitle{Benchmarks}
+
+\section{\sectiontitle}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\slidetitle{Data 'cell boundary'}
+
+\subsection{\slidetitle}
+\begin{frame}
+  \frametitle{\sectiontitle}
+  \framesubtitle{\slidetitle}
+
+  \begin{minipage}[h!]{0.40\textwidth}
+    Name: Retinal Pigment Epithelium
+
+    Number: 1032 images
+
+    \centering
+    \includegraphics[scale=0.12]{./img/3_benchmark/image.png}
+    \textbf{Image}
+  \end{minipage}\hfill
+  \begin{minipage}[h!]{0.40\textwidth}
+    Type: Cell microscopy
+
+    Size: 256x256
+
+    \centering
+    \includegraphics[scale=0.12]{./img/3_benchmark/mask.png}
+    \textbf{Mask}
+  \end{minipage}
+
+  \bigskip
+
+  Source: https://doi.org/doi:10.18434/T4/1503229
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\slidetitle{Accuracy for 'cell boundary'}
+
+\subsection{\slidetitle}
+\begin{frame}
+  \frametitle{\sectiontitle}
+  \framesubtitle{\slidetitle}
+
+  Compute time: Few minutes on WIPP
+
+  Task: Segments cell edges
+
+  \begin{center}
+    \begin{table}
+      \begin{tabular}{|l|l|c|}
+       \hline
+       \rowcolor{tableFirstRowColor}  Repository    & Model                       & Accuracy \\ [0.5ex]
+       \hline
+       \cellcolor{tableFirstColColor} WIPP          & unet-cnn*                   & 95.11\% $\pm$ 0.78\% \\
+       \hline
+       \cellcolor{tableFirstColColor} BioImage.IO   & 10.5281/zenodo.5869899      & 89.30\% $\pm$ 0.84\% \\
+       \hline
+       \cellcolor{tableFirstColColor} Hugging Face  & facebook/sam-vit-huge       & 86.01\% $\pm$ 2.50\% \\
+       \hline
+       \cellcolor{tableFirstColColor} SAM2          & facebook/sam2.1-hiera-large & 80.18\% $\pm$ 5.02\% \\
+       \hline
+       \cellcolor{tableFirstColColor} Cellpose      & cyto3                       & 78.51\% $\pm$ 2.35\% \\
+       \hline
+      \end{tabular}
+      \caption{Models accuracy after inference on data 'cell boundary'}
+    \end{table}
+  \end{center}
+
+  *Trained with data, then inferenced (in WIPP)
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\slidetitle{Data 'nuclei segmentation'}
+
+\subsection{\slidetitle}
+\begin{frame}
+  \frametitle{\sectiontitle}
+  \framesubtitle{\slidetitle}
+
+  \begin{minipage}[h!]{0.40\textwidth}
+    Name: DSB2018 stage1_train
+
+    Number: 497 images
+
+    %\centering
+    %\includegraphics[scale=0.12]{./img/example-image.png}
+    %\textbf{Image}
+  \end{minipage}\hfill
+  \begin{minipage}[h!]{0.40\textwidth}
+    Type: Cell microscopy
+
+    Size: 256x256
+
+    %\centering
+    %\includegraphics[scale=0.12]{./img/example-image.png}
+    %\textbf{Mask}
+  \end{minipage}
+
+  \bigskip
+
+  Source: https://bbbc.broadinstitute.org/BBBC038/
+
+\end{frame}
+
+\iffalse
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\slidetitle{Present 3D data}
+
+\subsection{\slidetitle}
+\begin{frame}
+  \frametitle{\sectiontitle}
+  \framesubtitle{\slidetitle}
+
+  TODO
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\slidetitle{Benchmark 3D data}
+
+\subsection{\slidetitle}
+\begin{frame}
+  \frametitle{\sectiontitle}
+  \framesubtitle{\slidetitle}
+
+  Compute in few minutes on WIPP with dataset `3D-RPE W3`
+
+  The first column (gray) is ground truth and the first row (blue) is model prediction
+
+  \begin{center}
+    \begin{table}
+      \begin{tabular}{|c|c|c|c|c|}
+       \hline
+       \rowcolor{tableFirstRowColor}      & Wipp unet             & BioImage.IO*          & Cellpose cyto3        & Sam2**   \\ [0.5ex]
+       \hline
+       \cellcolor{tableFirstColColor} W3  & 83.97\% $\pm$ 14.95\% & 52.05\% $\pm$ 31.57\% & 49.53\% $\pm$ 25.06\% & 30.18\% $\pm$ 27.09\% \\
+       \hline
+       \cellcolor{tableFirstColColor} W   & $\times$              & 54.99\% $\pm$ 31.74\% & 51.75\% $\pm$ 25.33\% & 31.60\% $\pm$ 27.91\% \\
+       \hline
+       \cellcolor{tableFirstColColor} B   & $\times$              & $\times$              & 71.48\% $\pm$ 14.09\% & 51.76\% $\pm$ 22.86\% \\
+       \hline
+       \cellcolor{tableFirstColColor} C   & $\times$              & $\times$              & $\times$              & 51.29\% $\pm$ 27.54\% \\
+       \hline
+      \end{tabular}
+      \caption{Similarity across different models and ground truth}
+    \end{table}
+  \end{center}
+
+  *NucleiSegmentationBoundaryModel (10.5281/zenodo.5764892)
+
+  **sam2-hiera-large
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\slidetitle{Explaining poor 3D results}
+
+\subsection{\slidetitle}
+\begin{frame}
+  \frametitle{\sectiontitle}
+  \framesubtitle{\slidetitle}
+
+  \begin{minipage}[h!]{0.30\textwidth}
+    \centering
+    \textbf{Image (example)}\par\medskip
+    \includegraphics[scale=0.1]{./img/result_img.png}
+  \end{minipage}\hfill
+  \begin{minipage}[h!]{0.30\textwidth}
+    \centering
+    \textbf{Mask (associated)}\par\medskip
+    \includegraphics[scale=0.1]{./img/result_mask.png}
+  \end{minipage}\hfill
+  \begin{minipage}[h!]{0.30\textwidth}
+    \centering
+    \textbf{Prediction (B model)}\par\medskip
+    \includegraphics[scale=0.1]{./img/result_pred_bio.png}
+  \end{minipage}
+
+  \medskip
+  Memo: With other, more conventional 2D data, the results are much better!
+
+\end{frame}
+\fi

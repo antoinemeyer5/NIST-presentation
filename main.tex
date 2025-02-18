@@ -12,8 +12,8 @@
 % \addbibresource{refs.bib}
 
 % base informations
-\title{WIPP: Reminder, AI plugins and enhancements}
-\author[Author]{Antoine Meyer}
+\title{WIPP: AI plugins, Benchmarks and Enhancements}
+\author[Author]{Antoine Meyer, Mylene Simon, Timothee Kheyrkhah, Peter Bajcsy}
 \date[\today]{\today}
 
 \begin{document}
@@ -34,14 +34,35 @@
   \end{frame}
 
   \import{./sections/}{1_background}
-  \import{./sections/}{2_ai-plugins}
-  \import{./sections/}{3_enhancements}
-  \import{./sections/}{4_conclusion}
 
   \begin{frame}[plain]
     \centering
-    \LARGE Thanks !
+    \tableofcontents[sections=2]
   \end{frame}
+  \import{./sections/}{2_ai-plugins}
+
+  \begin{frame}[plain]
+    \centering
+    \tableofcontents[sections=3]
+  \end{frame}
+  \import{./sections/}{3_benchmark}
+
+  \begin{frame}[plain]
+    \centering
+    \tableofcontents[sections=4]
+  \end{frame}
+  \import{./sections/}{4_enhancements}
+
+  \begin{frame}[plain]
+    \centering
+    \tableofcontents[sections=5]
+  \end{frame}
+  \import{./sections/}{5_conclusion}
+
+%  \begin{frame}[plain]
+%    \centering
+%    \LARGE Thanks !
+%  \end{frame}
 
 %  \begin{frame}[allowframebreaks, noframenumbering]{References}
 %    \printbibliography
