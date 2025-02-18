@@ -49,6 +49,12 @@
 
     \bigskip
 
+    Results:
+
+    Plugins for Hugging Face, BioImage.IO, Cellpose and more
+
+    \bigskip
+
     Question:
 
     How to assess the relevance of results?
@@ -104,21 +110,50 @@
        \hline
        \rowcolor{tableFirstRowColor}      & Wipp unet             & BioImage.IO*          & Cellpose cyto3        & Sam2**   \\ [0.5ex]
        \hline
-       \cellcolor{tableFirstColColor} W3  & 83.97\% $\pm$ 14.95\% & 00.00\% $\pm$ 0.00\%  & 49.53\% $\pm$ 25.06\% & 30.18\% $\pm$ 27.09\% \\
+       \cellcolor{tableFirstColColor} W3  & 83.97\% $\pm$ 14.95\% & 52.05\% $\pm$ 31.57\% & 49.53\% $\pm$ 25.06\% & 30.18\% $\pm$ 27.09\% \\
        \hline
-       \cellcolor{tableFirstColColor} W   & $\times$              &                       & 51.75\% $\pm$ 25.33\% & \\
+       \cellcolor{tableFirstColColor} W   & $\times$              & 54.99\% $\pm$ 31.74\% & 51.75\% $\pm$ 25.33\% & 31.60\% $\pm$ 27.91\% \\
        \hline
-       \cellcolor{tableFirstColColor} B   & $\times$              & $\times$              &                       & \\
+       \cellcolor{tableFirstColColor} B   & $\times$              & $\times$              & 71.48\% $\pm$ 14.09\% & 51.76\% $\pm$ 22.86\% \\
        \hline
-       \cellcolor{tableFirstColColor} C   & $\times$              & $\times$              & $\times$              & \\
+       \cellcolor{tableFirstColColor} C   & $\times$              & $\times$              & $\times$              & 51.29\% $\pm$ 27.54\% \\
        \hline
       \end{tabular}
       \caption{Similarity across different models and ground truth}
     \end{table}
   \end{center}
 
-  *NucleiSegmentationBoundaryModel
+  *NucleiSegmentationBoundaryModel (10.5281/zenodo.5764892)
 
   **sam2-hiera-large
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\slidetitle{Explaining poor results}
+
+\subsection{\slidetitle}
+\begin{frame}
+  \frametitle{\sectiontitle}
+  \framesubtitle{\slidetitle}
+
+  \begin{minipage}[h!]{0.30\textwidth}
+    \centering
+    \textbf{Image (example)}\par\medskip
+    \includegraphics[scale=0.1]{./img/result_img.png}
+  \end{minipage}\hfill
+  \begin{minipage}[h!]{0.30\textwidth}
+    \centering
+    \textbf{Mask (associated)}\par\medskip
+    \includegraphics[scale=0.1]{./img/result_mask.png}
+  \end{minipage}\hfill
+  \begin{minipage}[h!]{0.30\textwidth}
+    \centering
+    \textbf{Prediction (B model)}\par\medskip
+    \includegraphics[scale=0.1]{./img/result_pred_bio.png}
+  \end{minipage}
+
+  \medskip
+  Memo: With other, more conventional 2D data, the results are much better!
 
 \end{frame}
