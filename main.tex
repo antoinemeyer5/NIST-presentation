@@ -23,10 +23,17 @@
   \end{frame}
 
   \begin{frame}{Overview}
-    \tableofcontents
+    \begin{columns}[onlytextwidth,T]
+      \begin{column}{.45\textwidth}
+        \tableofcontents[sections=1-2]
+      \end{column}
+      \begin{column}{.45\textwidth}
+        \tableofcontents[sections=3-5]
+      \end{column}
+    \end{columns}
   \end{frame}
 
-  \import{./sections/}{1_reminder}
+  \import{./sections/}{1_background}
   \import{./sections/}{2_ai-plugins}
   \import{./sections/}{3_enhancements}
   \import{./sections/}{4_conclusion}

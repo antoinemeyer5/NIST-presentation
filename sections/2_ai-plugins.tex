@@ -16,11 +16,11 @@
     \begin{table}
       \begin{tabular}{|c|c|c|}
        \hline
-       \rowcolor{tableFirstRowColor} AI repositories & Image classification models & Mask generation models \\ [0.5ex]
+       \rowcolor{tableFirstRowColor} AI repositories & Image classification models & Segmentation + MG* models \\ [0.5ex]
        \hline
-       \cellcolor{tableFirstColColor} Hugging Face & 15,593 & 176 \\
+       \cellcolor{tableFirstColColor} Hugging Face & 15,593 & 1,160 + 176 \\
        \hline
-       \cellcolor{tableFirstColColor} BioImage.IO & 1 & 32 \\
+       \cellcolor{tableFirstColColor} BioImage.IO & 1 & 4 + 32 \\
        \hline
        \cellcolor{tableFirstColColor} Cellpose & $\times$ & 21 \\
        \hline
@@ -32,10 +32,13 @@
       \caption{Number of models per repository}
     \end{table}
   \end{center}
+
+  * MG: Mask Generation
+
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\def\slidetitle{Unlock theses repositories}
+\def\slidetitle{Unlock these repositories}
 
 \subsection{\slidetitle}
 \begin{frame}
@@ -74,7 +77,7 @@
   \framesubtitle{\slidetitle}
 
   \begin{minipage}[h!]{0.65\textwidth}
-    Goal: Access relevance of external AI results
+    Goal: mesure accuracy of external AI results
 
     \bigskip
 
@@ -93,7 +96,58 @@
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\def\slidetitle{Benchmark example}
+\def\slidetitle{Benchmark 2D data}
+
+\subsection{\slidetitle}
+\begin{frame}
+  \frametitle{\sectiontitle}
+  \framesubtitle{\slidetitle}
+
+  Compute in few minutes on WIPP with dataset `2D-RPE`*
+
+  Task: Cell boundary
+
+  \begin{center}
+    \begin{table}
+      \begin{tabular}{|l|l|c|}
+       \hline
+       \rowcolor{tableFirstRowColor}  Repository    & Model                   & Accuracy \\ [0.5ex]
+       \hline
+       \cellcolor{tableFirstColColor} WIPP          & unet-cnn**              & 95.11\% $\pm$ 0.78\% \\
+       \hline
+       \cellcolor{tableFirstColColor} Hugging Face  & facebook/sam-vit-huge   & 85.87\% $\pm$ 3.98\% \\
+       \hline
+       \cellcolor{tableFirstColColor} BioImage.IO   & 10.5281/zenodo.5869899  & 89.30\% $\pm$ 0.84\% \\
+       \hline
+       \cellcolor{tableFirstColColor} Cellpose      & cyto3                   & \\
+       \hline
+       \cellcolor{tableFirstColColor} SAM2          & & \\
+       \hline
+      \end{tabular}
+      \caption{Similarity across different models}
+    \end{table}
+  \end{center}
+
+  *https://doi.org/doi:10.18434/T4/1503229
+
+  **Trained with data, then inferenced (in WIPP)
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\slidetitle{Present 3D data}
+
+\subsection{\slidetitle}
+\begin{frame}
+  \frametitle{\sectiontitle}
+  \framesubtitle{\slidetitle}
+
+  TODO
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\slidetitle{Benchmark 3D data}
 
 \subsection{\slidetitle}
 \begin{frame}
@@ -130,7 +184,7 @@
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\def\slidetitle{Explaining poor results}
+\def\slidetitle{Explaining poor 3D results}
 
 \subsection{\slidetitle}
 \begin{frame}
