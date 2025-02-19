@@ -13,7 +13,7 @@
   \begin{minipage}[h!]{0.40\textwidth}
     Name: Retinal Pigment Epithelium
 
-    Number: 1032 images
+    Number: 1032 images (822/210)
 
     \centering
     \includegraphics[scale=0.12]{./img/3_benchmark/image.png}
@@ -81,27 +81,64 @@
   \framesubtitle{\slidetitle}
 
   \begin{minipage}[h!]{0.40\textwidth}
-    Name: DSB2018 stage1_train
+    Name: Data Science Bowl 2018
 
-    Number: 497 images
+    Number: 497 images (447/50)
 
-    %\centering
-    %\includegraphics[scale=0.12]{./img/example-image.png}
-    %\textbf{Image}
+    \centering
+    \includegraphics[scale=0.13]{./img/3_benchmark/image_2.png}
+    \textbf{Image}
   \end{minipage}\hfill
   \begin{minipage}[h!]{0.40\textwidth}
     Type: Cell microscopy
 
-    Size: 256x256
+    Size: 256x256 and 696x520
 
-    %\centering
-    %\includegraphics[scale=0.12]{./img/example-image.png}
-    %\textbf{Mask}
+    \centering
+    \includegraphics[scale=0.13]{./img/3_benchmark/mask_2.png}
+    \textbf{Mask}
   \end{minipage}
 
   \bigskip
 
   Source: https://bbbc.broadinstitute.org/BBBC038/
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\slidetitle{Accuracy for 'nuclei segmentation'}
+
+\subsection{\slidetitle}
+\begin{frame}
+  \frametitle{\sectiontitle}
+  \framesubtitle{\slidetitle}
+
+  Compute time: Few minutes on WIPP
+
+  Task: Segments nuclei of cells
+
+  \begin{center}
+    \begin{table}
+        \begin{tabular}{|l|l|c|}
+            \hline
+            \rowcolor{tableFirstRowColor}  Repository   & Model                     & Accuracy \\ [0.5ex]
+            \hline
+            \cellcolor{tableFirstColColor} WIPP         & Stardist                  &  \\
+            \hline
+            \cellcolor{tableFirstColColor} BioImage.IO  & 10.5281/zenodo.5764892    & 93.73\% $\pm$ 3.98\% \\
+            \hline
+            \cellcolor{tableFirstColColor}           &                  &  \\
+            \hline
+            \cellcolor{tableFirstColColor}           &                  &  \\
+            \hline
+            \cellcolor{tableFirstColColor}           &                  &  \\
+            \hline
+            \cellcolor{tableFirstColColor} Cellpose     & cyto3                     &  \\
+            \hline
+        \end{tabular}
+      \caption{Models accuracy after inference on data 'cell boundary'}
+    \end{table}
+  \end{center}
 
 \end{frame}
 
