@@ -39,7 +39,7 @@
     Number: 1032 images (822/210)
 
     \centering
-    \includegraphics[scale=0.12]{./img/3_benchmark/image.png}
+    \includegraphics[scale=0.13]{./img/3_benchmark/image.png}
     \textbf{Image}
   \end{minipage}\hfill
   \begin{minipage}[h!]{0.40\textwidth}
@@ -48,7 +48,7 @@
     Size: 256x256
 
     \centering
-    \includegraphics[scale=0.12]{./img/3_benchmark/mask.png}
+    \includegraphics[scale=0.13]{./img/3_benchmark/mask.png}
     \textbf{Mask}
   \end{minipage}
 
@@ -81,6 +81,7 @@
        \cellcolor{tableFirstColColor} BioImage.IO   & 10.5281/zenodo.5869899      & 89.30\% $\pm$ 0.84\% \\
        \hline
        \cellcolor{tableFirstColColor} Hugging Face  & facebook/sam-vit-huge       & 86.01\% $\pm$ 2.50\% \\
+       \hline
        \hline
        \cellcolor{tableFirstColColor} SAM2          & facebook/sam2.1-hiera-large & 80.18\% $\pm$ 5.02\% \\
        \hline
@@ -150,13 +151,18 @@
             \hline
             \cellcolor{tableFirstColColor} WIPP         & Stardist 2D paper DSB 2018    & 90.67\% $\pm$ 4.42\% \\
             \hline
-            \cellcolor{tableFirstColColor}           &                  &  \\
-            \hline
-            \cellcolor{tableFirstColColor}           &                  &  \\
-            \hline
             \cellcolor{tableFirstColColor} Cellpose     & cyto3                         & 82.31\% $\pm$ 17.25\% \\
             \hline
-            \cellcolor{tableFirstColColor} SAM2         & facebook/sam2.1-hiera-large   & 33.89\% $\pm$ 29.43\% \\
+            \cellcolor{tableFirstColColor} Cellpose     & nuclei                        & 81.00\% $\pm$ 21.00\% \\
+            \hline
+            \hline
+            \cellcolor{tableFirstColColor} SAM2         & facebook/sam2.1-hiera-small   & 48.18\% $\pm$ 32.41\% \\
+            \hline
+            %\cellcolor{tableFirstColColor} SAM2         & facebook/sam2.1-hiera-large   & 33.89\% $\pm$ 29.43\% \\
+            %\hline
+            \cellcolor{tableFirstColColor} BioImage.IO  & 10.5281/zenodo.5869899        & 29.47\% $\pm$ 8.32\% \\
+            \hline
+            \cellcolor{tableFirstColColor} Hugging Face & facebook/sam-vit-huge         & 21.63\% $\pm$ 15.37\% \\
             \hline
         \end{tabular}
       \caption{Models accuracy after inference on data 'nuclei segmentation'}
