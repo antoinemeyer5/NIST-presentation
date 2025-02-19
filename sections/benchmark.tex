@@ -3,6 +3,29 @@
 \section{\sectiontitle}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\slidetitle{2-steps workflow}
+
+\subsection{\slidetitle}
+\begin{frame}
+  \frametitle{\sectiontitle}
+  \framesubtitle{\slidetitle}
+
+  \begin{minipage}[h!]{0.35\textwidth}
+
+    WIPP 2-steps workflow
+
+    \begin{enumerate}
+        \item Inference the model
+        \item Compute the accuracy
+    \end{enumerate}
+
+  \end{minipage}\hfill
+  \begin{minipage}[h!]{0.65\textwidth}
+    \includegraphics[scale=0.52]{./img/3_benchmark/workflow.png}
+  \end{minipage}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \def\slidetitle{Data 'cell boundary'}
 
 \subsection{\slidetitle}
@@ -121,22 +144,22 @@
     \begin{table}
         \begin{tabular}{|l|l|c|}
             \hline
-            \rowcolor{tableFirstRowColor}  Repository   & Model                     & Accuracy \\ [0.5ex]
+            \rowcolor{tableFirstRowColor}  Repository   & Model                         & Accuracy \\ [0.5ex]
             \hline
-            \cellcolor{tableFirstColColor} WIPP         & Stardist                  &  \\
+            \cellcolor{tableFirstColColor} BioImage.IO  & 10.5281/zenodo.5764892        & 93.73\% $\pm$ 3.98\% \\
             \hline
-            \cellcolor{tableFirstColColor} BioImage.IO  & 10.5281/zenodo.5764892    & 93.73\% $\pm$ 3.98\% \\
-            \hline
-            \cellcolor{tableFirstColColor}           &                  &  \\
+            \cellcolor{tableFirstColColor} WIPP         & Stardist 2D paper DSB 2018    & 90.67\% $\pm$ 4.42\% \\
             \hline
             \cellcolor{tableFirstColColor}           &                  &  \\
             \hline
             \cellcolor{tableFirstColColor}           &                  &  \\
             \hline
-            \cellcolor{tableFirstColColor} Cellpose     & cyto3                     &  \\
+            \cellcolor{tableFirstColColor} Cellpose     & cyto3                         & 82.31\% $\pm$ 17.25\% \\
+            \hline
+            \cellcolor{tableFirstColColor} SAM2         & facebook/sam2.1-hiera-large   & 33.89\% $\pm$ 29.43\% \\
             \hline
         \end{tabular}
-      \caption{Models accuracy after inference on data 'cell boundary'}
+      \caption{Models accuracy after inference on data 'nuclei segmentation'}
     \end{table}
   \end{center}
 
