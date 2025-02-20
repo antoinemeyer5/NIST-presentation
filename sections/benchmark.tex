@@ -15,9 +15,16 @@
     WIPP 2-steps workflow
 
     \begin{enumerate}
-        \item Inference the model
-        \item Compute the accuracy
+      \item Inference the model
+      \item Compute the accuracy
     \end{enumerate}
+
+    Hardware
+    \begin{itemize}
+      \item AMD Ryzen 9 3950X 16-Core Processor
+      \item NVIDIA GeForce RTX 3090
+      \item 64G RAM
+    \end{itemize}
 
   \end{minipage}\hfill
   \begin{minipage}[h!]{0.65\textwidth}
@@ -66,26 +73,24 @@
   \frametitle{\sectiontitle}
   \framesubtitle{\slidetitle}
 
-  Compute time: Few minutes on WIPP
-
   Task: Segments cell edges
 
   \begin{center}
     \begin{table}
-      \begin{tabular}{|l|l|c|}
+      \begin{tabular}{|l|l|c|c|}
        \hline
-       \rowcolor{tableFirstRowColor}  Repository    & Model                       & Accuracy \\ [0.5ex]
+       \rowcolor{tableFirstRowColor}  Repository    & Model                       & Accuracy              & Time per image \\ [0.5ex]
        \hline
-       \cellcolor{tableFirstColColor} WIPP          & unet-cnn*                   & 95.11\% $\pm$ 0.78\% \\
+       \cellcolor{tableFirstColColor} WIPP          & unet-cnn*                   & 95.11\% $\pm$ 0.78\%  & 8.56s + 2.35s \\
        \hline
-       \cellcolor{tableFirstColColor} BioImage.IO   & 10.5281/zenodo.5869899      & 89.30\% $\pm$ 0.84\% \\
+       \cellcolor{tableFirstColColor} BioImage.IO   & 10.5281/zenodo.5869899      & 89.30\% $\pm$ 0.84\%  & 0.31s \\
        \hline
-       \cellcolor{tableFirstColColor} Hugging Face  & facebook/sam-vit-huge       & 86.01\% $\pm$ 2.50\% \\
+       \cellcolor{tableFirstColColor} Hugging Face  & facebook/sam-vit-huge       & 86.01\% $\pm$ 2.50\%  & 4.16s \\
        \hline
        \hline
-       \cellcolor{tableFirstColColor} SAM2          & facebook/sam2.1-hiera-large & 80.18\% $\pm$ 5.02\% \\
+       \cellcolor{tableFirstColColor} SAM2          & facebook/sam2.1-hiera-large & 80.18\% $\pm$ 5.02\%  & 2.0s \\
        \hline
-       \cellcolor{tableFirstColColor} Cellpose      & cyto3                       & 78.51\% $\pm$ 2.35\% \\
+       \cellcolor{tableFirstColColor} Cellpose      & cyto3                       & 78.51\% $\pm$ 2.35\%  & 1.08s \\
        \hline
       \end{tabular}
       \caption{Models accuracy after inference on data 'cell boundary'}
@@ -137,8 +142,6 @@
   \frametitle{\sectiontitle}
   \framesubtitle{\slidetitle}
 
-  Compute time: Few minutes on WIPP
-
   Task: Segments nuclei of cells
 
   \begin{center}
@@ -149,7 +152,7 @@
             \hline
             \cellcolor{tableFirstColColor} BioImage.IO  & 10.5281/zenodo.5764892        & 93.73\% $\pm$ 3.98\% \\
             \hline
-            \cellcolor{tableFirstColColor} WIPP         & Stardist 2D paper DSB 2018    & 90.67\% $\pm$ 4.42\% \\
+            \cellcolor{tableFirstColColor} WIPP         & Stardist 2D paper DSB 2018*    & 90.67\% $\pm$ 4.42\% \\
             \hline
             \cellcolor{tableFirstColColor} Cellpose     & cyto3                         & 82.31\% $\pm$ 17.25\% \\
             \hline
@@ -168,6 +171,8 @@
       \caption{Models accuracy after inference on data 'nuclei segmentation'}
     \end{table}
   \end{center}
+
+  *Trained with data, then inferenced (in WIPP)
 
 \end{frame}
 
