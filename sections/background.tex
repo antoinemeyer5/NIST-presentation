@@ -17,15 +17,15 @@
 
   Challenges
   \begin{itemize}
-    \item Models are spread on lot of different repositories and formats
-    \item For non-technical researchs, not trivial to setup and execute AI models
-    \item Re-train models from scratch take lot of time and money
+    \item Scattered models in a lot of different repositories and stored in many formats
+    \item It is not trivial to setup and execute AI models for non-technical researchers
+    \item Re-training models from scratch take a lot of time and money
   \end{itemize}
 
   Motivations
   \begin{itemize}
-    \item Accelerate application of AI models to scientific problems
-    \item Save hours of computation time by reusing pre-trained models from diverse repositories
+    \item Accelerate applications of AI models to scientific problems
+    \item Save computation time by reusing pre-trained models from diverse repositories
   \end{itemize}
 \end{frame}
 
@@ -56,6 +56,40 @@
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\slidetitle{No common APIs}
+
+\subsection{\slidetitle}
+\begin{frame}[containsverbatim]
+  \frametitle{\sectiontitle}
+  \framesubtitle{\slidetitle}
+
+  No common APIs/CLIs/no standard for 'download API'
+
+  \begin{listing}[H]
+    \begin{minted}[frame=lines,framesep=2mm,baselinestretch=0.8,fontsize=\footnotesize,linenos]{python}
+      # BioImage.IO
+      model = load_description(args.model)
+
+      # Hugging Face
+      pipe = pipeline(task="mask-generation", model=args.model,
+        points_per_batch=32, device=device)
+
+      # SAM2
+      mask_generator = SAM2AutomaticMaskGenerator.from_pretrained(
+        args.model, device=device)
+    \end{minted}
+
+    \begin{minted}[frame=lines,framesep=2mm,baselinestretch=0.8,fontsize=\footnotesize,linenos]{bash}
+      # Cellpose
+      python -m cellpose --pretrained_model cyto3
+    \end{minted}
+  \end{listing}
+
+  Same problem with 'inference API', 'train API', etc
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \def\slidetitle{Our approach}
 
 \subsection{\slidetitle}
@@ -63,32 +97,24 @@
   \frametitle{\sectiontitle}
   \framesubtitle{\slidetitle}
 
-  \begin{minipage}[h!]{0.60\textwidth}
+  \begin{minipage}[h!]{0.90\textwidth}
 
     Our approach
     \begin{itemize}
+      \item Using existing API of AI repositories
       \item Leverage WIPP
       \item Use AI model card
-      \item Using existing API of AI repositories
     \end{itemize}
 
     \bigskip
 
-    Web Image Processing Pipelines (WIPP)
+    Contributions
     \begin{itemize}
-      \item Purposes
-      \begin{itemize}
-        \item Measurements based on terabyte-sized images
-        \item Algorithmic plugin platform
-      \end{itemize}
-      \item Goal
-      \begin{itemize}
-        \item Lower the bar to execute image analyses
-      \end{itemize}
+      \item Analyze API of AI repositories
+      \item Implement them for containerized plugin that run in WIPP without learning the API
+      \item Trained/Retrained AI model will comes with proper AI model card
     \end{itemize}
-  \end{minipage}\hfill
-  \begin{minipage}[h!]{0.35\textwidth}
-    \includegraphics[scale=0.55]{./img/1_background/wipp.png}
+
   \end{minipage}
 \end{frame}
 
@@ -101,12 +127,17 @@
   \framesubtitle{\slidetitle}
 
   \begin{minipage}[h!]{0.40\textwidth}
+
+    Web Image Processing Pipelines
+    \begin{itemize}
+      \item Purpose: Measurements based on terabyte-sized images
+      \item Goal: Lower the barrier to execute image analyses
+    \end{itemize}
+
     WIPP workflow
     \begin{itemize}
       \item Sequence of plugins
     \end{itemize}
-
-    \bigskip
 
     WIPP plugin
     \begin{itemize}
