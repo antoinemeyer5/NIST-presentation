@@ -3,6 +3,39 @@
 \section{\sectiontitle}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\iffalse
+\def\slidetitle{AI model cards}
+
+\subsection{\slidetitle}
+\begin{frame}[containsverbatim]
+  \frametitle{\sectiontitle}
+  \framesubtitle{\slidetitle}
+
+  Goal: Automatic documentation for AI models trained inside WIPP
+
+  Work: Make AI model card proposal and development for integration
+
+  \begin{listing}[H]
+    \begin{minted}[frame=lines,framesep=2mm,baselinestretch=0.8,fontsize=\small,linenos]{java}
+      public class AiModelCard {
+        private String              version;
+        private String              name;
+        private Date                creationDate;
+        private String              framework;
+        private Map<String, String> trainingData;
+        private Map<String, String> trainingParameters;
+        [8 additional fields]
+      }
+    \end{minted}
+    % \caption{AiModelCard.java}
+  \end{listing}
+
+  Feedback: Not relevant, AI users test directly, they don't read the documentation
+
+\end{frame}
+%\fi
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \def\slidetitle{Problem statement}
 
 \subsection{\slidetitle}
@@ -149,35 +182,3 @@
   \end{minipage}
 \end{frame}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\iffalse
-\def\slidetitle{AI model cards}
-
-\subsection{\slidetitle}
-\begin{frame}[containsverbatim]
-  \frametitle{\sectiontitle}
-  \framesubtitle{\slidetitle}
-
-  Goal: Automatic documentation for AI models trained inside WIPP
-
-  Work: Make AI model card proposal and development for integration
-
-  \begin{listing}[H]
-    \begin{minted}[frame=lines,framesep=2mm,baselinestretch=0.8,fontsize=\small,linenos]{java}
-      public class AiModelCard {
-        private String              version;
-        private String              name;
-        private Date                creationDate;
-        private String              framework;
-        private Map<String, String> trainingData;
-        private Map<String, String> trainingParameters;
-        [8 additional fields]
-      }
-    \end{minted}
-    % \caption{AiModelCard.java}
-  \end{listing}
-
-  Feedback: Not relevant, AI users test directly, they don't read the documentation
-
-\end{frame}
-\fi
