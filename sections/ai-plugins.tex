@@ -33,7 +33,7 @@
     \end{table}
   \end{center}
 
-  * MG: Mask Generation
+  *MG: Mask Generation
 
 \end{frame}
 
@@ -75,13 +75,20 @@
   \framesubtitle{\slidetitle}
 
   \begin{minipage}[h!]{0.65\textwidth}
-    Goal: Mesure accuracy of external AI results
+
+    Goals
+    \begin{itemize}
+      \item Mesure accuracy of external AI results
+      \item Select the most accurate/fastest one
+    \end{itemize}
 
     \bigskip
 
     Work:
 
     Plugin to compute the Dice-Sørensen coefficient*
+
+    \[ Dice = \frac{2*TP}{2*TP + FP + FN} \]
 
     \bigskip
     \bigskip

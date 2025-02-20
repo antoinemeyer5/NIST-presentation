@@ -3,7 +3,60 @@
 \section{\sectiontitle}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\def\slidetitle{WIPP}
+\def\slidetitle{Problem statement}
+
+\subsection{\slidetitle}
+\begin{frame}
+  \frametitle{\sectiontitle}
+  \framesubtitle{\slidetitle}
+
+  Problem
+  \begin{itemize}
+    \item Lower the barriers for reusing trained AI models available in AI models repositories
+  \end{itemize}
+
+  Challenges
+  \begin{itemize}
+    \item Models are spread on lot of different repositories and formats
+    \item For non-technical researchs, not trivial to setup and execute AI models
+    \item Re-train models from scratch take lot of time and money
+  \end{itemize}
+
+  Motivations
+  \begin{itemize}
+    \item Accelerate application of AI models to scientific problems
+    \item Save hours of computation time by reusing pre-trained models from diverse repositories
+  \end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\slidetitle{Related work}
+
+\subsection{\slidetitle}
+\begin{frame}
+  \frametitle{\sectiontitle}
+  \framesubtitle{\slidetitle}
+
+  Already existing APIs or tools to download, inference (and train) AI models
+  \begin{itemize}
+    \item Transformers (Hugging Face API)*
+    \item Cellpose API**
+    \item BioImage.IO Core (Python libraries)
+    \item SAM2 repository***
+  \end{itemize}
+
+  \bigskip
+  \bigskip
+
+  *https://aclanthology.org/2020.emnlp-demos.6/
+
+  **https://www.biorxiv.org/content/10.1101/2020.02.02.931238v1
+
+  ***https://arxiv.org/abs/2408.00714
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\slidetitle{Our approach}
 
 \subsection{\slidetitle}
 \begin{frame}
@@ -11,6 +64,16 @@
   \framesubtitle{\slidetitle}
 
   \begin{minipage}[h!]{0.60\textwidth}
+
+    Our approach
+    \begin{itemize}
+      \item Leverage WIPP
+      \item Use AI model card
+      \item Using existing API of AI repositories
+    \end{itemize}
+
+    \bigskip
+
     Web Image Processing Pipelines (WIPP)
     \begin{itemize}
       \item Purposes
@@ -85,3 +148,4 @@
   Feedback: Not relevant, AI users test directly, they don't read the documentation
 
 \end{frame}
+
